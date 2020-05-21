@@ -86,3 +86,10 @@ a{
     .tile7 {background-position: left bottom;}
     .tile8 {background-position: center bottom;}
     .tile9 {background: white; cursor: default;}
+
+
+    .gif{
+        width: 200px;
+        height: 200px;
+        margin-left: 120px;
+    }
