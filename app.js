@@ -16,10 +16,8 @@ for (var row=1;row<=3;row++) { //For each row of the 3x3 grid
   }
 }
 document.getElementById("btnEmpezar").onclick = function() {
-  //disable
   this.disabled = true;
 
-  //do some validation stuff
 }
 chronoStart();
 }
@@ -70,12 +68,8 @@ function clickTile(row,column) {
 
 
 
-// const inpFile = document.getElementById("inpFile")
-// const preview_cont = document.getElementById("entorno");
-
 const previewImage = document.querySelector(".image-preview__image");
 
-// const previewDefaultText = preview_cont.querySelector(".image.preview__default-text");
 
  const t1 = document.getElementById("cell11");
 const t2 = document.getElementById("cell12");
@@ -88,42 +82,6 @@ const t8 = document.getElementById("cell32");
 const t9 = document.getElementById("cell33");
 
 
-// inpFile.addEventListener("change",(e) =>{
-//   const file =e.target.files[0];
-
-//   if(file){
-//       const reader = new FileReader();
-
-//     //   previewDefaultText.style.display="none";
-//       // previewImage.style.display="block";
-
-//       reader.addEventListener("load", function(){
-//          var foto=previewImage.setAttribute("src", this.result);
-//       //    var imagen =previewImage.src;
-//       //    console.log(imagen);
-
-//       //  t1.style.backgroundImage=("src",);
-//       });
-//       reader.readAsDataURL(file);
-
-//   document.getElementById("cbox1").checked = true;
-//         //   t2.style.background="url('foto')";
-//         //   t3.style.background="url('foto')";
-//         //   t4.style.background="url('foto')";
-//         //   t5.style.background="url('foto')";
-//         //   t6.style.background="url('foto')";
-//         //   t7.style.background="url('foto')";
-//         //   t8.style.background="url('foto')";
-//         //   t9.style.background="url('foto')";
-//       const tw= document.getElementById("ttt").innerHTML="Hello World";
-//   }else{
-
-//     previewDefaultText.style.display="null";
-//     previewImage.style.display="null";
-
-
-//   }
-// });
 
 var sheet = document.styleSheets[1];
 
@@ -131,15 +89,16 @@ function fileReader(e) {
   if(window.FileReader) {
     var file  = e.target.files[0];
     var reader = new FileReader();
+    
     if (file && file.type.match('image.*')) {
+      
       reader.readAsDataURL(file);
       document.getElementById("cbox1").checked = true;
     } else {
       console.log('please add an image')
     }
     reader.onloadend = function (e) {
-   //   sheet.insertRule(".tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9 { background:url(" + reader.result + "); display: table-cell;      width: 120px;      height: 120px;border: 1px solid white; cursor: pointer;} ", 0);
-     sheet.insertRule(".tile1 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: left top;}")
+           sheet.insertRule(".tile1 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: left top;}")
      sheet.insertRule(".tile2 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: center top;}")
      sheet.insertRule(".tile3 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: right top;}")
      sheet.insertRule(".tile4 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: left center;}")
@@ -148,10 +107,10 @@ function fileReader(e) {
      sheet.insertRule(".tile7 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: left bottom;}")
      sheet.insertRule(".tile8 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: center bottom;}")
      sheet.insertRule(".tile9 { width: 120px;height: 120px;background-position: right bottom; background: white; cursor: default;}")
-     
-      // sheet.insertRule(".tile1 {background-position: left top;}.tile2 {background-position: center top;}      .tile3 {background-position: right top;}      .tile4 {background-position: left center;}      .tile5 {background-position: center center;}      .tile6 {background-position: right center;}      .tile7 {background-position: left bottom;}     .tile8 {background-position: center bottom;}.tile9 {background: white; cursor: default;")
+     sheet.insertRule("#table{  transform: rotate(180deg);}")
 
     }
+ 
   }
 }
 
@@ -223,18 +182,13 @@ var cnt=0;
         
 
 
-    // function CountFun(){
-    //  cnt=parseInt(cnt)+parseInt(1);
-    //  var divData=document.getElementById("cell11");
-    //  console.log(divData);
-    //  inputF.value =  divData.value ;
-
-    // }
-
     function CountFun(){
-      cnt=parseInt(cnt)+parseInt(1);
+
+
+      cnt +=0;
+      cnt=parseInt(cnt)+1;
       var divData=document.getElementById("mov");
-      console.log(divData);
+     
       divData.innerHTML=cnt ;
  
      }
