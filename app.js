@@ -217,3 +217,24 @@ function chronoStop(){
     document.chronoForm.reset.onclick = chronoStopReset
     clearTimeout(timerID)
 }
+
+
+var cnt=0;
+        
+
+
+    // function CountFun(){
+    //  cnt=parseInt(cnt)+parseInt(1);
+    //  var divData=document.getElementById("cell11");
+    //  console.log(divData);
+    //  inputF.value =  divData.value ;
+
+    // }
+
+    function CountFun(){
+      cnt=parseInt(cnt)+parseInt(1);
+      var divData=document.getElementById("mov");
+      console.log(divData);
+      divData.innerHTML=cnt ;
+ 
+     }
