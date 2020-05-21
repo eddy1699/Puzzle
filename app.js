@@ -8,13 +8,13 @@ function shuffle() {
 //Use nested loops to access each cell of the 3x3 grid
 for (var row=1;row<=3;row++) { //For each row of the 3x3 grid
    for (var column=1;column<=3;column++) { //For each column in this row
-  
+
     var row2=Math.floor(Math.random()*3 + 1); //Pick a random row from 1 to 3
     var column2=Math.floor(Math.random()*3 + 1); //Pick a random column from 1 to 3
-     
+
     swapTiles("cell"+row+column,"cell"+row2+column2); //Swap the look & feel of both cells
-  } 
-} 
+  }
+}
 document.getElementById("btnEmpezar").onclick = function() {
   //disable
   this.disabled = true;
@@ -27,7 +27,7 @@ chronoStart();
 function clickTile(row,column) {
   var cell = document.getElementById("cell"+row+column);
   var tile = cell.className;
-  if (tile!="tile9") { 
+  if (tile!="tile9") {
        //Checking if white tile on the right
        if (column<3) {
          if ( document.getElementById("cell"+row+(column+1)).className=="tile9") {
@@ -55,9 +55,9 @@ function clickTile(row,column) {
            swapTiles("cell"+row+column,"cell"+(row+1)+column);
            return;
          }
-       } 
+       }
   }
-  
+
 }
 
 
@@ -70,7 +70,7 @@ function clickTile(row,column) {
 
 
 
-const inpFile = document.getElementById("inpFile")
+// const inpFile = document.getElementById("inpFile")
 // const preview_cont = document.getElementById("entorno");
 
 const previewImage = document.querySelector(".image-preview__image");
@@ -101,11 +101,11 @@ const t9 = document.getElementById("cell33");
 //          var foto=previewImage.setAttribute("src", this.result);
 //       //    var imagen =previewImage.src;
 //       //    console.log(imagen);
-        
+
 //       //  t1.style.backgroundImage=("src",);
 //       });
 //       reader.readAsDataURL(file);
-      
+
 //   document.getElementById("cbox1").checked = true;
 //         //   t2.style.background="url('foto')";
 //         //   t3.style.background="url('foto')";
@@ -117,11 +117,11 @@ const t9 = document.getElementById("cell33");
 //         //   t9.style.background="url('foto')";
 //       const tw= document.getElementById("ttt").innerHTML="Hello World";
 //   }else{
-      
+
 //     previewDefaultText.style.display="null";
 //     previewImage.style.display="null";
-  
- 
+
+
 //   }
 // });
 
@@ -139,8 +139,9 @@ function fileReader(e) {
     }
     reader.onloadend = function (e) {
       sheet.insertRule(".tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9 { background:url(" + reader.result + "); display: table-cell;      width: 120px;      height: 120px;border: 1px solid white; cursor: pointer;} ", 0);
+      console.log(reader.result);
       // sheet.insertRule(".tile1 {background-position: left top;}.tile2 {background-position: center top;}      .tile3 {background-position: right top;}      .tile4 {background-position: left center;}      .tile5 {background-position: center center;}      .tile6 {background-position: right center;}      .tile7 {background-position: left bottom;}     .tile8 {background-position: center bottom;}.tile9 {background: white; cursor: default;")
-   
+
     }
   }
 }
@@ -174,7 +175,7 @@ function chrono(){
     else if(msec < 100){
         msec = "0" +msec
     }
-    document.getElementById("chronotime").innerHTML = min + ":" + sec 
+    document.getElementById("chronotime").innerHTML = min + ":" + sec
     timerID = setTimeout("chrono()", 10)
 }
 function chronoStart(){
