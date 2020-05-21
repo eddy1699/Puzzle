@@ -138,8 +138,17 @@ function fileReader(e) {
       console.log('please add an image')
     }
     reader.onloadend = function (e) {
-      sheet.insertRule(".tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9 { background:url(" + reader.result + "); display: table-cell;      width: 120px;      height: 120px;border: 1px solid white; cursor: pointer;} ", 0);
-      console.log(reader.result);
+   //   sheet.insertRule(".tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9 { background:url(" + reader.result + "); display: table-cell;      width: 120px;      height: 120px;border: 1px solid white; cursor: pointer;} ", 0);
+     sheet.insertRule(".tile1 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: left top;}")
+     sheet.insertRule(".tile2 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: center top;}")
+     sheet.insertRule(".tile3 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: right top;}")
+     sheet.insertRule(".tile4 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: left center;}")
+     sheet.insertRule(".tile5 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: center center;}")
+     sheet.insertRule(".tile6 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: right center;}")
+     sheet.insertRule(".tile7 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: left bottom;}")
+     sheet.insertRule(".tile8 { width: 120px;height: 120px;background:url(" + reader.result + ");background-position: center bottom;}")
+     sheet.insertRule(".tile9 { width: 120px;height: 120px;background-position: right bottom; background: white; cursor: default;}")
+     
       // sheet.insertRule(".tile1 {background-position: left top;}.tile2 {background-position: center top;}      .tile3 {background-position: right top;}      .tile4 {background-position: left center;}      .tile5 {background-position: center center;}      .tile6 {background-position: right center;}      .tile7 {background-position: left bottom;}     .tile8 {background-position: center bottom;}.tile9 {background: white; cursor: default;")
 
     }
